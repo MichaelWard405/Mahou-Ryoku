@@ -1,4 +1,4 @@
-package io.github.mahouryoku.mana;
+package io.github.mahouryoku.mana.storage.manapool;
 
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.FloatTag;
