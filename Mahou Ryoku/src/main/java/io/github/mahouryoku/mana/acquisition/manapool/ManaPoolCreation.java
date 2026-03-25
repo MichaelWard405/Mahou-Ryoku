@@ -16,8 +16,7 @@ public class ManaPoolCreation implements ManaPoolCreationInterface, INBTSerializ
     @Override
     public CompoundTag serializeNBT() {
         CompoundTag NBT = new CompoundTag();
-        NBT.putBoolean("HasManaPool", getManaPool);
-
+        NBT.putBoolean("HasManaPool", this.getManaPool);
         return NBT;
     }
     @Override
