@@ -13,14 +13,10 @@ import net.minecraftforge.fml.common.Mod;
 
     @Mod.EventBusSubscriber(modid = "mahouryoku")
     public class ManaPoolCapabilityEvent {
-
-        // 1. Register the capability itself
         @SubscribeEvent
         public static void registerCaps(RegisterCapabilitiesEvent event) {
             event.register(ManaPoolInterface.class);
         }
-
-        // 2. Attach the capability to players
         @SubscribeEvent
         public static void onAttachCapabilities(AttachCapabilitiesEvent<Entity> event) {
             if (event.getObject() instanceof Player) {

@@ -5,25 +5,25 @@ import net.minecraftforge.common.util.INBTSerializable;
 
 public class ManaPoolCreation implements ManaPoolCreationInterface, INBTSerializable<CompoundTag> {
     public boolean getManaPool = false;
-
     @Override
     public boolean GetManaPool() {
         return getManaPool;
     }
     @Override
-    public void SetManaPool(boolean unlocked) {
-        this.getManaPool = unlocked;
+    public void SetManaPool(boolean Unlocked) {
+        this.getManaPool = Unlocked;
     }
     @Override
     public CompoundTag serializeNBT() {
-        CompoundTag tag = new CompoundTag();
-        tag.putBoolean("HasManaPool", getManaPool);
-        return tag;
+        CompoundTag NBT = new CompoundTag();
+        NBT.putBoolean("HasManaPool", getManaPool);
+
+        return NBT;
     }
     @Override
-    public void deserializeNBT(CompoundTag tag) {
-        if (tag.contains("HasManaPool")) {
-            this.getManaPool = tag.getBoolean("HasManaPool");
+    public void deserializeNBT(CompoundTag NBT) {
+        if (NBT.contains("HasManaPool")) {
+            this.getManaPool = NBT.getBoolean("HasManaPool");
         }
     }
 }
