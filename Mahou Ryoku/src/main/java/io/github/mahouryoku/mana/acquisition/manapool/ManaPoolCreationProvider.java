@@ -21,12 +21,8 @@ public class ManaPoolCreationProvider implements ICapabilitySerializable<Compoun
     }
 
     @Override
-    public CompoundTag serializeNBT() {
-        return null;
-    }
+    public CompoundTag serializeNBT() { return backend.serializeNBT();}
 
     @Override
-    public void deserializeNBT(CompoundTag nbt) {
-
-    }
+    public void deserializeNBT(CompoundTag nbt) { backend.deserializeNBT(nbt);}
 }
