@@ -10,16 +10,16 @@ import net.minecraftforge.common.util.LazyOptional;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-public class ManaCapabilitesProvider implements ICapabilitySerializable<FloatTag> {
+public class ManaPoolCapabilitesProvider implements ICapabilitySerializable<FloatTag> {
     // 1.21.1 capability management
-    public static Capability<ManaInterface> MANA_CAPABILITY = CapabilityManager.get(new CapabilityToken<>(){});
+    public static Capability<ManaPoolInterface> MANAPOOL_CAPABILITY = CapabilityManager.get(new CapabilityToken<>(){});
 
-    private final Mana backend = new Mana();
-    private final LazyOptional<ManaInterface> optionalData = LazyOptional.of(() -> backend);
+    private final ManaPool backend = new ManaPool();
+    private final LazyOptional<ManaPoolInterface> optionalData = LazyOptional.of(() -> backend);
 
     @Override
     public @NotNull <T> LazyOptional<T> getCapability(@NotNull Capability<T> cap, @Nullable Direction side) {
-        return cap == MANA_CAPABILITY ? optionalData.cast() : LazyOptional.empty();
+        return cap == MANAPOOL_CAPABILITY ? optionalData.cast() : LazyOptional.empty();
     }
 
     @Override

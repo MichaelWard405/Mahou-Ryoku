@@ -1,9 +1,8 @@
 package io.github.mahouryoku.event;
 
 
-import io.github.mahouryoku.mana.ManaCapabilitesProvider;
-import io.github.mahouryoku.mana.ManaInterface;
-import io.github.mahouryoku.mana.Mana;
+import io.github.mahouryoku.mana.ManaPoolCapabilitesProvider;
+import io.github.mahouryoku.mana.ManaPoolInterface;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
@@ -18,14 +17,14 @@ import net.minecraftforge.fml.common.Mod;
         // 1. Register the capability itself
         @SubscribeEvent
         public static void registerCaps(RegisterCapabilitiesEvent event) {
-            event.register(ManaInterface.class);
+            event.register(ManaPoolInterface.class);
         }
 
         // 2. Attach the capability to players
         @SubscribeEvent
         public static void onAttachCapabilities(AttachCapabilitiesEvent<Entity> event) {
             if (event.getObject() instanceof Player) {
-                event.addCapability(ResourceLocation.fromNamespaceAndPath("mahouryoku", "mana"), new ManaCapabilitesProvider());
+                event.addCapability(ResourceLocation.fromNamespaceAndPath("mahouryoku", "mana"), new ManaPoolCapabilitesProvider());
             }
         }
     }
