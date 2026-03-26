@@ -1,6 +1,7 @@
 package io.github.mahouryoku.event;
 
 
+import io.github.mahouryoku.mana.acquisition.manapool.ManaPoolCreationProvider;
 import io.github.mahouryoku.mana.storage.manapool.ManaPoolCapabilitesProvider;
 import io.github.mahouryoku.mana.storage.manapool.ManaPoolInterface;
 import net.minecraft.resources.ResourceLocation;
@@ -20,7 +21,13 @@ import net.minecraftforge.fml.common.Mod;
         @SubscribeEvent
         public static void onAttachCapabilities(AttachCapabilitiesEvent<Entity> event) {
             if (event.getObject() instanceof Player) {
-                event.addCapability(ResourceLocation.fromNamespaceAndPath("mahouryoku", "manapool"), new ManaPoolCapabilitesProvider());
+                if (event.getObject().getCapability(ManaPoolCreationProvider.MANAPOOLCREATION_CAPABILITY).isPresent()) {
+                    event.addCapability(ResourceLocation.fromNamespaceAndPath("mahouryoku", "manapool"), new ManaPoolCapabilitesProvider());
+                }
+                else {
+                    return;
+                }
+
             }
         }
     }
