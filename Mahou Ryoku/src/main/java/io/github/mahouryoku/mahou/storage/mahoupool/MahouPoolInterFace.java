@@ -1,10 +1,11 @@
-package io.github.mahouryoku.mana.storage.mahoupool;
+package io.github.mahouryoku.mahou.storage.mahoupool;
 
 public interface MahouPoolInterFace {
     boolean GetManhouPool();
     void SetMahouPool(boolean Unlocked);
     float MahouPoolValue();
-    void MahouPoolSize(int MahouPoolSize);
+    void MaxMahouPoolSize(float MaxMahouPoolSize);
+    float MahouPoolSize();
     void SetMahouPoolVaule(float mahou);
     void ConsumeFromMahouPool(float mahou);
     void RegenerateMahouPool(float mahou);

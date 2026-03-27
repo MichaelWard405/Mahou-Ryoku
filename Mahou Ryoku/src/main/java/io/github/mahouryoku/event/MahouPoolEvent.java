@@ -1,7 +1,7 @@
 package io.github.mahouryoku.event;
 
-import io.github.mahouryoku.mana.storage.mahoupool.MahouPoolInterFace;
-import io.github.mahouryoku.mana.storage.mahoupool.MahouPoolProvider;
+import io.github.mahouryoku.mahou.storage.mahoupool.MahouPoolInterFace;
+import io.github.mahouryoku.mahou.storage.mahoupool.MahouPoolProvider;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;

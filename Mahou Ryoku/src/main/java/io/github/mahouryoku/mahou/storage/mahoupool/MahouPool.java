@@ -1,11 +1,11 @@
-package io.github.mahouryoku.mana.storage.mahoupool;
+package io.github.mahouryoku.mahou.storage.mahoupool;
 
 import net.minecraft.nbt.CompoundTag;
 import net.minecraftforge.common.util.INBTSerializable;
 
 public class MahouPool implements MahouPoolInterFace, INBTSerializable<CompoundTag> {
     public boolean GetManhouPool = false;
-    public float MahouPool = 0f;
+    public float MahouPool = 1f;
     public float MahouPoolSize = 100f;
 
     @Override
@@ -18,25 +18,28 @@ public class MahouPool implements MahouPoolInterFace, INBTSerializable<CompoundT
     public float MahouPoolValue() {return MahouPool;}
 
     @Override
-    public void MahouPoolSize(int MahouPoolSize) {this.MahouPoolSize = MahouPoolSize;}
+    public void MaxMahouPoolSize(float MaxMahouPoolSize) {this.MahouPoolSize = MaxMahouPoolSize;}
+
+    @Override
+    public float MahouPoolSize() {return MahouPoolSize;}
 
     @Override
     public void SetMahouPoolVaule(float mahou) {
-        this.MahouPool = Math.max(0, Math.min(mahou, MahouPoolSize));
+        this.MahouPool = Math.max(1, Math.min(mahou, MahouPoolSize));
     }
 
     @Override
-    public void ConsumeFromMahouPool(float mahou) {this.MahouPool = Math.max(0, this.MahouPool - mahou);}
+    public void ConsumeFromMahouPool(float mahou) {this.MahouPool = Math.max(1, this.MahouPool - mahou);}
 
     @Override
-    public void RegenerateMahouPool(float mahou) { this.MahouPool = Math.max(0, this.MahouPool + mahou);}
+    public void RegenerateMahouPool(float mahou) { this.MahouPool = Math.min(this.MahouPool + mahou, this.MahouPoolSize);}
 
     @Override
     public CompoundTag serializeNBT() {
         CompoundTag NBT = new CompoundTag();
         NBT.putBoolean("HasMahouPool", this.GetManhouPool);
         NBT.putFloat("MahouPool", this.MahouPool);
-        NBT.putInt("MahouPoolSize", (int) this.MahouPoolSize);
+        NBT.putFloat("MahouPoolMax", this.MahouPoolSize);
         return NBT;
     }
 
@@ -48,8 +51,8 @@ public class MahouPool implements MahouPoolInterFace, INBTSerializable<CompoundT
         if (NBT.contains("MahouPool")){
             this.MahouPool = NBT.getFloat("MahouPool");
         }
-        if (NBT.contains("MahouPoolSize")){
-            this.MahouPoolSize = NBT.getInt("MahouPoolSize");
+        if (NBT.contains("MahouPoolMax")){
+            this.MahouPoolSize = NBT.getFloat("MahouPoolMax");
         }
     }
 

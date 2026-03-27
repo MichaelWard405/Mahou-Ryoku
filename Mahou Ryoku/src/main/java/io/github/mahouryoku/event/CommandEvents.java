@@ -1,12 +1,10 @@
 package io.github.mahouryoku.event;
 
-import io.github.mahouryoku.mana.storage.mahoupool.MahouPool;
-import io.github.mahouryoku.mana.storage.mahoupool.MahouPoolProvider;
-import io.github.mahouryoku.mana.storage.mahoupool.MahouPoolUtilizationEvent;
+import io.github.mahouryoku.mahou.storage.mahoupool.MahouPoolProvider;
+import io.github.mahouryoku.mahou.storage.mahoupool.MahouPoolUtilizationEvent;
 import net.minecraft.commands.Commands;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.event.RegisterCommandsEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -40,6 +38,19 @@ public class CommandEvents {
                         }else {
                             player.getCapability(MahouPoolProvider.MAHOUPOOL_CAPABILITY).ifPresent(mahou -> {
                                 mahou.SetMahouPool(true);
+                            });
+                            return 1;
+                        }
+                    }
+                    return 0;
+                }));
+        event.getDispatcher().register(Commands.literal("IncreaseMax")
+                .executes(context -> {
+                    if (context.getSource().getEntity() instanceof ServerPlayer player) {
+                        if (MahouPoolUtilizationEvent.MahouPoolUtilization(player, MahouCost)) {
+                            player.getCapability(MahouPoolProvider.MAHOUPOOL_CAPABILITY).ifPresent(mahou -> {
+                                float CurrentMahouPool = mahou.MahouPoolSize();
+                                mahou.MaxMahouPoolSize(CurrentMahouPool + 10f);
                             });
                             return 1;
                         }

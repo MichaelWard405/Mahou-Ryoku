@@ -1,5 +1,7 @@
-1. make manapool/ manapool creation one capability
+1. make manapool/ manapool creation one capability (Done)
 
-2. make diamonds increase max manapool (due to change)
+2. make passive mahou restoration
 
-3. make nbt spell system that add a explostion spell that can be cast by adding the spells nbt data onto a stick
+3. make diamonds increase max manapool (due to change)
+
+4. make nbt spell system that add a explostion spell that can be cast by adding the spells nbt data onto any items its applied too

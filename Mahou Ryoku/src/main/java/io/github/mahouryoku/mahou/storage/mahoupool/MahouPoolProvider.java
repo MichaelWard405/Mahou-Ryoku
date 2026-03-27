@@ -1,4 +1,4 @@
-package io.github.mahouryoku.mana.storage.mahoupool;
+package io.github.mahouryoku.mahou.storage.mahoupool;
 
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;

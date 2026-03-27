@@ -1,8 +1,7 @@
-package io.github.mahouryoku.mana.storage.mahoupool;
+package io.github.mahouryoku.mahou.storage.mahoupool;
 
-import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.player.Player;
-import static io.github.mahouryoku.mana.storage.mahoupool.MahouPoolProvider.MAHOUPOOL_CAPABILITY;
+import static io.github.mahouryoku.mahou.storage.mahoupool.MahouPoolProvider.MAHOUPOOL_CAPABILITY;
 
 public class MahouPoolUtilizationEvent {
     public static boolean MahouPoolUtilization(Player player, int MahouCost) {
