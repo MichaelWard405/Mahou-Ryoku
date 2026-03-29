@@ -11,3 +11,7 @@
 6. add varients to Crystaline mahou using NBT
 
 7. make nbt spell system that add a explostion spell that can be cast by adding the spells nbt data onto any items its applied too
+
+8. fix ModItems file to make more sense and fit updated file system
+
+9. fix mahou pool to be used for all methods with an array to allow checks for what mahou core the player has
