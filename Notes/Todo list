@@ -2,8 +2,12 @@
 
 2. make passive mahou restoration(Done)
 
-3. make Crystaline mahou item
+3. make Crystaline mahou item(Done)
 
 4. make Crystaline mahou increase max manapool (due to change)
 
-5. make nbt spell system that add a explostion spell that can be cast by adding the spells nbt data onto any items its applied too
+5. Add purities to Crystaline mahou using NBT
+
+6. add varients to Crystaline mahou using NBT
+
+7. make nbt spell system that add a explostion spell that can be cast by adding the spells nbt data onto any items its applied too
