@@ -1,0 +1,1 @@
+a system where for different forms of magic you can breed worms to be fatter for more blood or put runes on them and use them in kodoku to make that rune stronger, they could also be used a a mahou fuel source
