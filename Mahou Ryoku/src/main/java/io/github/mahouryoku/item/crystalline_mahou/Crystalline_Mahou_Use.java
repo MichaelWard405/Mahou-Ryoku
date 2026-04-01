@@ -17,7 +17,7 @@ import java.util.List;
 
 
 public class Crystalline_Mahou_Use extends Item{
-    public Crystalline_Mahou_Use(Item.Properties properties) {
+    public Crystalline_Mahou_Use(Properties properties) {
         super(properties);
     }
 
@@ -37,9 +37,15 @@ public class Crystalline_Mahou_Use extends Item{
     return InteractionResultHolder.sidedSuccess(player.getItemInHand(hand), level.isClientSide());
     }
 
-    public void appendHoverText(ItemStack stack, @Nullable Level level, List<net.minecraft.network.chat.Component> tooltip, TooltipFlag flag) {
+    public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag flag) {
         int Purity = GetPurity(stack);
-        tooltip.add(Component.literal("Purity: " + Purity));
+        String PurityText = switch (Purity) {
+            case 1 -> "Poor Purity";
+            case 2 -> "Native Purity";
+            case 3 -> "Rich Purity";
+            default -> "";
+        };
+        tooltip.add(Component.literal(PurityText));
         super.appendHoverText(stack, level, tooltip, flag);
     }
 
