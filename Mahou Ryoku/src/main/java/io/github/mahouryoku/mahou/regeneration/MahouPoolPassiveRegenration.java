@@ -18,6 +18,6 @@ public class MahouPoolPassiveRegenration {
                 player.getCapability(MahouPoolProvider.MAHOUPOOL_CAPABILITY).ifPresent(Mahou -> {
                     if (player.level().getGameTime() % 20 == 0) {
                         if (Mahou.MahouPoolValue() < Mahou.MahouPoolSize()) {
-                            Mahou.RegenerateMahouPool(0.3f);
+                            Mahou.RegenerateMahouPool(990.3f); //Chane back set high for testin
                             System.out.println("MAHOU VALUE: " + Mahou.MahouPoolValue());
                         }}});}}}}

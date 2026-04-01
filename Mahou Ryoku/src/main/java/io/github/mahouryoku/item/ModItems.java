@@ -1,4 +1,5 @@
-package io.github.mahouryoku.item.crystalline_mahou;
+package io.github.mahouryoku.item;
+import io.github.mahouryoku.item.crystalline_mahou.Crystalline_Mahou_Use;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -14,3 +15,4 @@ public abstract class ModItems {
 
     public static void register(IEventBus eventBus) {ITEM.register(eventBus);}
 }
+    
