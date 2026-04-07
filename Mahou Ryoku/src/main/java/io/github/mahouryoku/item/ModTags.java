@@ -8,4 +8,6 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 
 public class ModTags {
     public static final TagKey<Item> HAS_QUALITY = ItemTags.create(ResourceLocation.fromNamespaceAndPath("mahouryoku", "has_quality"));
+    public static final TagKey<Item> HAS_PURITY = ItemTags.create(ResourceLocation.fromNamespaceAndPath("mahouryoku", "has_purity"));
+    public static final TagKey<Item> MAHOU_TYPING = ItemTags.create(ResourceLocation.fromNamespaceAndPath("mahouryoku", "mahou_typing"));
 }

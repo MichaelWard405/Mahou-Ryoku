@@ -36,32 +36,4 @@ public class Crystalline_Mahou_Use extends Item{
         }
     return InteractionResultHolder.sidedSuccess(player.getItemInHand(hand), level.isClientSide());
     }
-
-    public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag flag) {
-        int Purity = GetPurity(stack);
-        String PurityText = switch (Purity) {
-            case 1 -> "Poor Purity";
-            case 2 -> "Native Purity";
-            case 3 -> "Rich Purity";
-            default -> "";
-        };
-        tooltip.add(Component.literal(PurityText));
-        super.appendHoverText(stack, level, tooltip, flag);
-    }
-
-
-    public static void SetPurity(ItemStack stack, int Purity) {
-        CompoundTag NBT = stack.getOrCreateTag();
-        NBT.putInt("Purity", Purity);
-    }
-    public static int GetPurity(ItemStack stack) {
-        CompoundTag NBT = stack.getTag();
-        if (NBT != null && NBT.contains("Purity")) {
-            return NBT.getInt("Purity");
-        }
-        return 0;
-    }
-
-
-
 }
