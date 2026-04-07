@@ -6,12 +6,14 @@
 
 4. make Crystaline mahou increase max manapool (due to change)(Done)
 
-5. Add purities to Crystaline mahou using NBT(Done)
+5. Add purities to Crystaline mahou using NBT(Done) added qualities to ingots/ores(Done)
 
-6. add varients to Crystaline mahou using NBT
+6. add varients to Crystaline mahou using NBT(Done) due to add more
 
-7. make nbt spell system that add a explostion spell that can be cast by adding the spells nbt data onto any items its applied too
+7. make nbt data persistant when crafting/smelting
 
-8. fix ModItems file to make more sense and fit updated file system
+8. make nbt spell system that add a explostion spell that can be cast by adding the spells nbt data onto any items its applied too
 
-9. fix mahou pool to be used for all methods with an array to allow checks for what mahou core the player has
+9. fix ModItems file to make more sense and fit updated file system
+
+10. fix mahou pool to be used for all methods with an array to allow checks for what mahou core the player has
