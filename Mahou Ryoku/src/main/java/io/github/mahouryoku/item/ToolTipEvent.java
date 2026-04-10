@@ -29,7 +29,7 @@ public class ToolTipEvent {
                 purity = stack.getTag().getInt("Purity");
             }
             String purityText = switch (purity){
-                case 1 -> "poor";
+                case 1 -> "Poor";
                 case 2 -> "Native";
                 case 3 -> "Rich";
                 default -> "Unuseable";
