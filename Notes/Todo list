@@ -10,10 +10,18 @@
 
 6. add varients to Crystaline mahou using NBT(Done) due to add more
 
-7. make nbt data persistant when crafting/smelting
+7. update all notes within obsidian
 
-8. make nbt spell system that add a explostion spell that can be cast by adding the spells nbt data onto any items its applied too
+8. make all varients assests
 
-9. fix ModItems file to make more sense and fit updated file system
+9. make textures chnage depending on Quality/Purity
 
-10. fix mahou pool to be used for all methods with an array to allow checks for what mahou core the player has
+10. make all textures
+
+11. make nbt data persistant when crafting/smelting
+
+12. make nbt spell system that add a explostion spell that can be cast by adding the spells nbt data onto any items its applied too
+
+13. fix ModItems file to make more sense and fit updated file system
+
+14. fix mahou pool to be used for all methods with an array to allow checks for what mahou core the player has
