@@ -2,6 +2,8 @@ package io.github.mahouryoku;
 
 import com.mojang.logging.LogUtils;
 import io.github.mahouryoku.item.ModItems;
+import net.minecraft.client.renderer.item.ItemProperties;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -53,8 +55,17 @@ public class MahouRyoku
     public static class ClientModEvents
     {
         @SubscribeEvent
-        public static void onClientSetup(FMLClientSetupEvent event)
-        {
+        public static void onClientSetup(FMLClientSetupEvent event){
+            event.enqueueWork(() -> {
+                ItemProperties.register(ModItems.CRYSTALLINE_MAHOU.get(),
+                        ResourceLocation.fromNamespaceAndPath("mahouryoku", "texture_state"),
+                        (pStack, pLevel, pEntity, pSeed) -> {
+                            if (pStack.hasTag() && pStack.getTag().contains("Mahou_Typing")) {
+                                return (float) pStack.getTag().getInt("Mahou_Typing");
+                            }
+                            return 0;
+                        });
+            });
         }
     }
 }
