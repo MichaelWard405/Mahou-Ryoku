@@ -1,13 +1,3 @@
 {
-  "itemGroup.mahouryoku": "Example Mod Tab",
-  "block.mahouryoku.example_block": "Example Block",
-  "item.mahouryoku.example_item": "Example Item",
 
-  "mahouryoku.configuration.title": "mahou ryoku Configs",
-  "mahouryoku.configuration.section.mahouryoku.common.toml": "mahou ryoku Configs",
-  "mahouryoku.configuration.section.mahouryoku.common.toml.title": "mahou ryoku Configs",
-  "mahouryoku.configuration.items": "Item List",
-  "mahouryoku.configuration.logDirtBlock": "Log Dirt Block",
-  "mahouryoku.configuration.magicNumberIntroduction": "Magic Number Text",
-  "mahouryoku.configuration.magicNumber": "Magic Number"
 }
