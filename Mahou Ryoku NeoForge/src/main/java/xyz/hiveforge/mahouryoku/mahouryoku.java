@@ -31,6 +31,7 @@ import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
+import xyz.hiveforge.mahouryoku.Registries.MagicRegistries;
 
 @Mod(mahouryoku.MODID)
 public class mahouryoku {
@@ -40,6 +41,7 @@ public class mahouryoku {
     public mahouryoku(IEventBus modEventBus, ModContainer modContainer) {
         NeoForge.EVENT_BUS.register(this);
         modEventBus.addListener(this::addCreative);
+        MagicRegistries.register(modEventBus);
 
     }
 
