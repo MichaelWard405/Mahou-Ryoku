@@ -1,0 +1,1 @@
+Blood vein ritual, a ritual mimicing the blood flow and veins of a creature to use its magic prowess
