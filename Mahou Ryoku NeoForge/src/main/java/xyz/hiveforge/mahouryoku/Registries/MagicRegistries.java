@@ -15,9 +15,13 @@ public class MagicRegistries {
             DeferredRegister.create(NeoForgeRegistries.Keys.ATTACHMENT_TYPES, "mahouryoku");
 
     public static final Supplier<AttachmentType<MahouPool>> MAHOU_POOL =
-            ATTACHMENT_TYPES.register("mahou_pool", () -> AttachmentType.<MahouPool>builder(MahouPool::new).serialize(MahouPool.MAP_CODEC).copyOnDeath().build());
+            ATTACHMENT_TYPES.register("mahou_pool", () -> AttachmentType.<MahouPool>builder(MahouPool::new)
+                    .serialize(MahouPool.MAP_CODEC)
+                    //.copyOnDeath()
+                    .build());
 
     public static void register(IEventBus modBus) {
         ATTACHMENT_TYPES.register(modBus);
     }
+
  }

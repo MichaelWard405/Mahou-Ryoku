@@ -9,6 +9,8 @@ public interface MahouPoolInterface {
     void SetMahouPoolVaule(float mahou);
     void ConsumeFromMahouPool(float mahou);
     void RegenerateMahouPool(float mahou);
-    //float Affinity()
-    //float Eccentricity()
+    float Affinity();
+    float Eccentricity();
+    void SetAffinity(float Affinity);
+    void SetEccentricity(float Eccentricity);
 }

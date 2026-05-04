@@ -24,8 +24,36 @@ public class MahouPoolCommands {
                                     player.sendSystemMessage(Component.literal("§6--- Mahou Stats ---"));
                                     player.sendSystemMessage(Component.literal("Status: " + status));
                                     player.sendSystemMessage(Component.literal("Mana: §b" + data.MahouPoolValue() + "§f / §3" + data.MahouPoolSize()));
+                                    String Affinity = switch ((int) data.Affinity()) {
+                                        case 1 -> "Inferno";
+                                        default -> "Arcane Neutral";
+                                    };
+                                    player.sendSystemMessage(Component.literal("Affinity: §e" + Affinity));
 
+
+                                    String Eccentricity = switch ((int) data.Eccentricity()) {
+                                        case 1 -> "Neutral";
+                                        default -> "None";
+                                    };
+                                    player.sendSystemMessage(Component.literal("Eccentricity: §e" + Eccentricity));
                                     return 1;
+                                }))
+                        .then(Commands.literal("Unlock")
+                                .executes(context -> {
+                                    ServerPlayer player = context.getSource().getPlayerOrException();
+                                    MahouPool data = player.getData(MagicRegistries.MAHOU_POOL.get());
+
+                                    data.GetMahouPool = true;
+                                    return 0;
+                                }))
+                        .then(Commands.literal("Lock")
+                                .executes(context -> {
+                                    ServerPlayer player = context.getSource().getPlayerOrException();
+                                    MahouPool data = player.getData(MagicRegistries.MAHOU_POOL.get());
+
+                                    data.GetMahouPool = false;
+                                    data.MahouPool = 1f;
+                                    return 0;
                                 }))
         );
     }
