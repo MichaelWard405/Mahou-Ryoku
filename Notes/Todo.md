@@ -1,14 +1,5 @@
-Add Affinty
-
-add eccentricity
-
-add passive mahou regen 
-
-add coomand to unlock mahou 
 
 add command to use mahou 
-
-add command to lock mahou 
 
 add mahou crystaline items
 
