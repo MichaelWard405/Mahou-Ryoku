@@ -1,6 +1,3 @@
-
-add command to use mahou 
-
 add mahou crystaline items
 
 give mahou items affinityeis and puritys 
