@@ -22,6 +22,7 @@ public class MahouPoolPassiveRegenration {
                 player.setData(MagicRegistries.MAHOU_POOL.get(), data);
             }
         }
+
     }
 
 }

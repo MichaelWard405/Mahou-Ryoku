@@ -55,6 +55,15 @@ public class MahouPoolCommands {
                                     data.MahouPool = 1f;
                                     return 0;
                                 }))
+                        .then(Commands.literal("Spend")
+                                .executes(context -> {
+                                    ServerPlayer player = context.getSource().getPlayerOrException();
+                                    MahouPool data = player.getData(MagicRegistries.MAHOU_POOL.get());
+                                    if (data.GetMahouPool || data.MahouPool >= 10){
+                                        data.ConsumeFromMahouPool(10f);
+                                    }
+                                    return 0;
+                                }))
         );
     }
 }
