@@ -1,5 +1,7 @@
 package xyz.hiveforge.mahouryoku;
 
+import net.minecraft.world.item.Item;
+import net.neoforged.neoforge.registries.DeferredRegister;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -13,17 +15,20 @@ import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
 import xyz.hiveforge.mahouryoku.Registries.MagicRegistries;
 import xyz.hiveforge.mahouryoku.Registries.PlayerValueEvents;
+import xyz.hiveforge.mahouryoku.item.Mahou_Items;
 
 @Mod(mahouryoku.MODID)
 public class mahouryoku {
     public static final String MODID = "mahouryoku";
     public static final Logger LOGGER = LogUtils.getLogger();
 
+
     public mahouryoku(IEventBus modEventBus, ModContainer modContainer) {
         NeoForge.EVENT_BUS.register(this);
         NeoForge.EVENT_BUS.register(new PlayerValueEvents());
         modEventBus.addListener(this::addCreative);
         MagicRegistries.register(modEventBus);
+        Mahou_Items.register(modEventBus);
 
 
     }
