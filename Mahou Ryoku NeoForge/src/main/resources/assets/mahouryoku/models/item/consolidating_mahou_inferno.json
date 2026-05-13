@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "mahouryoku:item/consolidating_mahou_inferno"
+  }
+}

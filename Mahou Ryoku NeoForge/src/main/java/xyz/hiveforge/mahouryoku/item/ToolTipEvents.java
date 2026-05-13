@@ -52,5 +52,6 @@ public class ToolTipEvents {
             tooltip.set(0, Component.literal(Prefix).withStyle(PrefixColour)
                     .append(Component.translatable(itemStack.getItem().getDescriptionId())));
         }
+
     }
 }
