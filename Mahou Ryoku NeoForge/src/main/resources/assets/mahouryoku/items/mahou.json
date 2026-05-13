@@ -1,8 +1,11 @@
 {
   "model": {
     "type": "minecraft:range_dispatch",
-    "property": "mahouryoku:render_state",
+    "property": "minecraft:custom_model_data",
+    "index": 0,
     "entries": [
+      { "threshold": 2.1, "model": { "type": "minecraft:model", "model": "mahouryoku:item/crystalline_mahou_inferno" } },
+      { "threshold": 2.0, "model": { "type": "minecraft:model", "model": "mahouryoku:item/crystalline_mahou_arcane_neutral" } },
       { "threshold": 1.1, "model": { "type": "minecraft:model", "model": "mahouryoku:item/consolidating_mahou_inferno" } },
       { "threshold": 1.0, "model": { "type": "minecraft:model", "model": "mahouryoku:item/consolidating_mahou_arcane_neutral" } },
       { "threshold": 0.1, "model": { "type": "minecraft:model", "model": "mahouryoku:item/gathering_mahou_inferno" } },
@@ -10,7 +13,7 @@
     ],
     "fallback": {
       "type": "minecraft:model",
-      "model": "mahouryoku:item/gathering_mahou_inferno"
+      "model": "mahouryoku:item/gathering_mahou_arcane_neutral"
     }
   }
 }
