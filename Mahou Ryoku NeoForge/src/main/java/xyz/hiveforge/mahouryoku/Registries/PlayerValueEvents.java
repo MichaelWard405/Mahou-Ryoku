@@ -12,10 +12,10 @@ public class PlayerValueEvents {
             MahouPool oldData = event.getOriginal().getData(MagicRegistries.MAHOU_POOL);
             MahouPool newData = new MahouPool(
                     oldData.GetMahouPool,
-                    1.0f,                  // Exception: Reset pool value on death
-                    oldData.MahouPoolSize, // Keep size
-                    oldData.Affinity,      // Keep affinity
-                    oldData.Eccentricity   // Keep eccentricity
+                    1.0f,
+                    oldData.MahouPoolSize,
+                    oldData.Affinity,
+                    oldData.Eccentricity
             );
             event.getEntity().setData(MagicRegistries.MAHOU_POOL, newData);
         }
