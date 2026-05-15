@@ -1,8 +1,4 @@
-add mahou crystaline items
-
-give mahou items affinityeis and puritys 
-
-add system to add blender models/animations to the game 
+add system to add blender models/animations to the game (animation done just needs testing, Models come next)
 
 make 3d models and animations for mahou items
 
