@@ -81,7 +81,7 @@ public class Mahou_Items extends Item {
 
 
     public static final DeferredHolder<DataComponentType<?>, DataComponentType<MahouData>> MAHOU_DATA = COMPONENTS.registerComponentType("mahou_data", builder -> builder.persistent(MahouData.CODEC).networkSynchronized(STREAM_CODEC));
-    public static final DeferredItem<Mahou_Items> GATHERING_MAHOU = ITEMS.registerItem("mahou",
+    public static final DeferredItem<Mahou_Items> MAHOU = ITEMS.registerItem("mahou",
             properties -> new Mahou_Items(properties.stacksTo(1).component(MAHOU_DATA.get(),new MahouData(0,0,0, state(0,0,0)))));
 
 
