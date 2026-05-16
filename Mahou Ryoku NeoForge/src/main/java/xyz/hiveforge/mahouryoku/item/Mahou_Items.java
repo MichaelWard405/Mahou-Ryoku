@@ -2,24 +2,31 @@ package xyz.hiveforge.mahouryoku.item;
 
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
+import net.minecraft.client.Minecraft;
 import net.minecraft.core.component.DataComponentType;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.network.codec.ByteBufCodecs;
 import net.minecraft.network.codec.StreamCodec;
+import net.minecraft.resources.Identifier;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.component.CustomModelData;
+import net.minecraft.world.level.Level;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import org.jspecify.annotations.Nullable;
 
+import java.io.BufferedReader;
 import java.util.List;
 
 
@@ -44,6 +51,32 @@ public class Mahou_Items extends Item {
                     new CustomModelData(List.of(stateValue), List.of(), List.of(), List.of()));
             itemStack.setPopTime(1);
         }
+
+    }
+
+    @Override
+    public InteractionResult use(Level level, Player player, InteractionHand hand) {
+        if (level.isClientSide()) {
+
+            Identifier loc = Identifier.fromNamespaceAndPath("mahouryoku", "animation/player/throw.json");
+            var resourceStack = Minecraft.getInstance().getResourceManager().getResource(loc);
+
+            Minecraft.getInstance().getResourceManager().getResource(loc).ifPresent(resource -> {
+                try (BufferedReader reader = resource.openAsReader()) {
+                    StringBuilder sb = new StringBuilder();
+                    String line;
+                    while ((line = reader.readLine()) != null) {
+                        sb.append(line);
+                    }
+                    var bones = AnimLoader.loadFromJson(sb.toString(), "throw");
+                    HandRenderer.CONTROLLER.SetAnim(bones, false);
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            });
+        }
+        return InteractionResult.SUCCESS;
     }
 
     public record MahouData(int mana, int affinity, int eccentricity, float state) {

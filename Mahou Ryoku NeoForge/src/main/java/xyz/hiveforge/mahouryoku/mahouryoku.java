@@ -1,7 +1,5 @@
 package xyz.hiveforge.mahouryoku;
 
-import net.minecraft.world.item.Item;
-import net.neoforged.neoforge.registries.DeferredRegister;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -29,6 +27,7 @@ public class mahouryoku {
         modEventBus.addListener(this::addCreative);
         MagicRegistries.register(modEventBus);
         Mahou_Items.register(modEventBus);
+
 
 
     }
