@@ -54,30 +54,6 @@ public class Mahou_Items extends Item {
 
     }
 
-    @Override
-    public InteractionResult use(Level level, Player player, InteractionHand hand) {
-        if (level.isClientSide()) {
-
-            Identifier loc = Identifier.fromNamespaceAndPath("mahouryoku", "animation/player/throw.json");
-            var resourceStack = Minecraft.getInstance().getResourceManager().getResource(loc);
-
-            Minecraft.getInstance().getResourceManager().getResource(loc).ifPresent(resource -> {
-                try (BufferedReader reader = resource.openAsReader()) {
-                    StringBuilder sb = new StringBuilder();
-                    String line;
-                    while ((line = reader.readLine()) != null) {
-                        sb.append(line);
-                    }
-                    var bones = AnimLoader.loadFromJson(sb.toString(), "throw");
-                    HandRenderer.CONTROLLER.SetAnim(bones, false);
-
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            });
-        }
-        return InteractionResult.SUCCESS;
-    }
 
     public record MahouData(int mana, int affinity, int eccentricity, float state) {
         public static final Codec<MahouData> CODEC = RecordCodecBuilder.create(instance ->
