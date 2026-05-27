@@ -17,10 +17,14 @@ import xyz.hiveforge.mahouryoku.item.Mahou_Items;
 
 @Mod(mahouryoku.MODID)
 public class mahouryoku {
+    //sets Mod Id and Logger
     public static final String MODID = "mahouryoku";
     public static final Logger LOGGER = LogUtils.getLogger();
 
 
+    //==========================
+    //    Mod Bus Registries
+    //==========================
     public mahouryoku(IEventBus modEventBus, ModContainer modContainer) {
         NeoForge.EVENT_BUS.register(this);
         NeoForge.EVENT_BUS.register(new PlayerValueEvents());

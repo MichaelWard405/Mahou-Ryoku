@@ -12,6 +12,8 @@ import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 public class mahouryokuClient {
     public mahouryokuClient(ModContainer container) {
     }
+
+
     @SubscribeEvent
     static void onClientSetup(FMLClientSetupEvent event) {
         event.enqueueWork(() -> {

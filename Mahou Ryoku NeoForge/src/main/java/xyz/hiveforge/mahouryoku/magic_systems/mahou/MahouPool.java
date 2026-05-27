@@ -6,12 +6,16 @@ import com.mojang.serialization.codecs.RecordCodecBuilder;
 
 
 public class MahouPool implements MahouPoolInterface{
+    //========================================
+    //Applies Default Values To Player's Codec
+    //========================================
     public boolean GetMahouPool = false;
     public float MahouPool = 1f;
     public float MahouPoolSize = 100f;
     public float Affinity = 0;
     public float Eccentricity = 0;
 
+    //Sets The Values of the Players Capability to the Players Codec
     public MahouPool(boolean GetMahouPool, float MahouPool, float MahouPoolSize, float Affinity, float Eccentricity){
         this.GetMahouPool = GetMahouPool;
         this.MahouPool = MahouPool;
@@ -21,8 +25,12 @@ public class MahouPool implements MahouPoolInterface{
     }
     public MahouPool(){}
 
+    //============================================
+    //               Codec Builder
+    //Build the Codec For the Players Capabilities
+    //============================================
     public static final MapCodec<MahouPool> MAP_CODEC = RecordCodecBuilder.mapCodec(instance -> instance.group(
-            Codec.BOOL.fieldOf("GetMahouPool").forGetter(xyz.hiveforge.mahouryoku.magic_systems.mahou.MahouPool::GetManhouPool),
+            Codec.BOOL.fieldOf("GetMahouPool").forGetter(xyz.hiveforge.mahouryoku.magic_systems.mahou.MahouPool::GetMahouPool),
             Codec.FLOAT.fieldOf("MahouPool").forGetter(xyz.hiveforge.mahouryoku.magic_systems.mahou.MahouPool::MahouPoolValue),
             Codec.FLOAT.fieldOf("MahouPoolSize").forGetter(xyz.hiveforge.mahouryoku.magic_systems.mahou.MahouPool::MahouPoolSize),
             Codec.FLOAT.fieldOf("Affinity").forGetter(xyz.hiveforge.mahouryoku.magic_systems.mahou.MahouPool::Affinity),
@@ -30,9 +38,12 @@ public class MahouPool implements MahouPoolInterface{
     ).apply(instance, MahouPool::new));
 
 
-
+    //==============================================
+    //                   Overrides
+    //Overrides The Interface To Construct Functions
+    //==============================================
     @Override
-    public boolean GetManhouPool() {return GetMahouPool;}
+    public boolean GetMahouPool() {return GetMahouPool;}
     @Override
     public void SetMahouPool(boolean Unlocked) {this.GetMahouPool = Unlocked;}
     @Override
@@ -41,8 +52,6 @@ public class MahouPool implements MahouPoolInterface{
     public void MaxMahouPoolSize(float MaxMahouPoolSize) {this.MahouPoolSize = MaxMahouPoolSize;}
     @Override
     public float MahouPoolSize() {return MahouPoolSize;}
-    @Override
-    public void SetMahouPoolVaule(float mahou) {this.MahouPool = Math.max(1, Math.min(mahou, MahouPoolSize));}
     @Override
     public void ConsumeFromMahouPool(float mahou) {this.MahouPool = Math.max(1, this.MahouPool - mahou);}
     @Override

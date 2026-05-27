@@ -11,9 +11,13 @@ import java.util.function.Supplier;
 
 
 public class MagicRegistries {
+    //Registers the Players Codec as a Capability
     public static final DeferredRegister<AttachmentType<?>> ATTACHMENT_TYPES =
             DeferredRegister.create(NeoForgeRegistries.Keys.ATTACHMENT_TYPES, "mahouryoku");
 
+    //===============================
+    //     Mahou Pool Capability
+    //===============================
     public static final Supplier<AttachmentType<MahouPool>> MAHOU_POOL =
             ATTACHMENT_TYPES.register("mahou_pool", () -> AttachmentType.<MahouPool>builder(MahouPool::new)
                     .serialize(MahouPool.MAP_CODEC)

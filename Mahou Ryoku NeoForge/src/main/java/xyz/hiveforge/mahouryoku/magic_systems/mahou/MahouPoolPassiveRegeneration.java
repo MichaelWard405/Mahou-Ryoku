@@ -8,8 +8,13 @@ import net.neoforged.neoforge.event.tick.PlayerTickEvent;
 import xyz.hiveforge.mahouryoku.Registries.MagicRegistries;
 
 @EventBusSubscriber(modid = "mahouryoku")
-public class MahouPoolPassiveRegenration {
+public class MahouPoolPassiveRegeneration {
 
+
+    //==================================
+    //       Passive Regeneration
+    // Applies 0.03 Mahou every 20 ticks
+    //==================================
     @SubscribeEvent
     public static void onPlayerTick(PlayerTickEvent.Post event) {
         if (event.getEntity() instanceof ServerPlayer player) {
