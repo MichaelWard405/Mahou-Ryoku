@@ -27,15 +27,15 @@ sourceSets.main.resources {
 }
 
 repositories {
-    maven {
-        url = "https://www.cursemaven.com"
-        content {
-            includeGroup "curse.maven"
-        }
-
-    }
     mavenCentral()
-    // Add here additional repositories if required by some of the dependencies below.
+
+    // For GeckoLib
+    maven {
+        url = "https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/"
+    }
+
+    // For CPM API source build
+    maven { url = "https://www.cursemaven.com" }
 }
 
 base {
@@ -121,8 +121,15 @@ configurations {
 }
 
 dependencies {
-    implementation "curse.maven:geckolib-388172:7913641"
-    jarJar "curse.maven:geckolib-388172:7913641"
+    implementation "com.geckolib:geckolib-neoforge-${minecraft_version}:${geckolibVersion}"
+    jarJar "com.geckolib:geckolib-neoforge-${minecraft_version}:${geckolibVersion}"
+
+
+    implementation "curse.maven:custom-player-models-439870:8128437"
+    jarJar "curse.maven:custom-player-models-439870:8128437"
+}
+
+
     // Example optional mod dependency with JEI
     // The JEI API is declared for compile time use, while the full JEI artifact is used at runtime
     // compileOnly "mezz.jei:jei-${mc_version}-common-api:${jei_version}"
@@ -144,7 +151,7 @@ dependencies {
     // For more info:
     // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
     // http://www.gradle.org/docs/current/userguide/dependency_management.html
-}
+
 
 // This block of code expands all declared replace properties in the specified resource targets.
 // A missing property will result in an error. Properties are expanded using ${} Groovy notation.
