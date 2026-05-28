@@ -1,5 +1,4 @@
 package xyz.hiveforge.mahouryoku.race_system;
 
-public interface RaceInterface {
-
+public class RaceHandler {
 }
