@@ -11,7 +11,7 @@ import net.neoforged.fml.ModContainer;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
-import xyz.hiveforge.mahouryoku.Registries.MagicRegistries;
+import xyz.hiveforge.mahouryoku.Registries.PlayerDataAttachment;
 import xyz.hiveforge.mahouryoku.Registries.PlayerValueEvents;
 import xyz.hiveforge.mahouryoku.item.Mahou_Items;
 
@@ -29,7 +29,7 @@ public class mahouryoku {
         NeoForge.EVENT_BUS.register(this);
         NeoForge.EVENT_BUS.register(new PlayerValueEvents());
         modEventBus.addListener(this::addCreative);
-        MagicRegistries.register(modEventBus);
+        PlayerDataAttachment.register(modEventBus);
         Mahou_Items.register(modEventBus);
 
 
